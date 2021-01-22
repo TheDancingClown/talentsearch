@@ -4,11 +4,15 @@ fixture `Searching for talent`
   .page `../TalentSearch.html`;
 
 test('Search by location', async t => {
-    // select talent data to search
-
-    // enter search parameter
+    
     await t
-        .typeText('#location', 'Los Angeles')
-    // click button
-    // see results
+      // select talent data to search
+      .click('#talent-selector')
+      .click(Selector('option', { text: 'North America' }))
+      // enter search parameter
+      .typeText('#location-input', 'Los Angeles')
+      .click('#search-button')
+      // click button
+      .expect(Selector('#talent-display').innerText).eql('No matches found');
+      // see results
 });

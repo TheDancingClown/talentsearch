@@ -7,7 +7,15 @@
 </head>
 
 <body>
-  <input class=form-group_input type="text" id="location" name="location" placeholder="Enter location to search" required>
+  <select class=form-group_select id="talent-selector">
+    <option value="north_america">North America</option>
+  </select>
+  <input class=form-group_input id="location-input" type="text" name="location" placeholder="Enter location to search" required>
+  <button class="form-button" id="search-button">Search</button>
+
+  <div class=talent-display id="talent-display">
+    <p>No matches found</p>
+  </div>
 
 </body>
 </html>
