@@ -1,21 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <script src="src/TalentSearch.js"></script>
-  <script src="src/interface.js"></script>
-  <link rel="stylesheet" href="./public/styles.css">
-</head>
+  <head>
+    <link rel="stylesheet" href="./public/styles.css">
+  </head>
 
-<body>
-  <select class=form-group_select id="talent-selector">
-    <option value="north_america">North America</option>
-  </select>
-  <input class=form-group_input id="location-input" type="text" name="location" placeholder="Enter location to search" required>
-  <button class="form-button" id="search-button">Search</button>
+  <body>
+    <select class=form-group_select id="talent-selector">
+      <option value="North America">North America</option>
+    </select>
+    <input class=form-group_input id="location-input" type="text" name="location-input" placeholder="Enter location to search" required>
+    <button class="form-button" id="search-button">Search</button>
 
-  <div class=talent-display id="talent-display">
-    <p>No matches found</p>
-  </div>
-
-</body>
+    <div class=talent-display id="talent-display"></div>
+    <script src="src/TalentSearch.js"></script>
+    <script src="src/interface.js"></script>
+  </body>
 </html>
