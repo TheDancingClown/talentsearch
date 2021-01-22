@@ -33,5 +33,9 @@ describe("TalentSearch", () => {
       expect(search.byLocation(example, "Philidelphia")).toEqual(["Frank Reynolds"]);
       expect(search.byLocation(example, "Los Angeles")).toEqual(["Diane Nguyen"])
     });
+
+    it("returns an empty array if no matches found", () => {
+      expect(search.byLocation(example, "New York")).toEqual([])
+    })
   });
 });
