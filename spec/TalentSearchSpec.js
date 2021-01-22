@@ -35,7 +35,12 @@ describe("TalentSearch", () => {
     });
 
     it("returns an empty array if no matches found", () => {
-      expect(search.byLocation(example, "New York")).toEqual([])
+      expect(search.byLocation(example, "New York")).toEqual([]);
+    });
+
+    it("ignores case sensitivity", () => {
+      expect(search.byLocation(example, "Springfield")).toEqual(["Homer Simpson", "Krusty the Clown"]);
+      expect(search.byLocation(example, "sPrInGfIeLd")).toEqual(["Homer Simpson", "Krusty the Clown"]);
     })
   });
 });
