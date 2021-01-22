@@ -34,10 +34,10 @@ test('Message displayed when no matches found', async t => {
       .click(Selector('option', { text: 'North America' }))
       // enter search parameter
       .typeText('#location-input', 'Los Angeles')
-      .click('#search-button')
       // click button
-      .expect(Selector('#talent-display').innerHTML).eql('No matches found');
+      .click('#search-button')
       // see results
+      .expect(Selector('#talent-display').innerHTML).eql('No matches found');
 });
 
 //TypeError: event.setMock is not a function
