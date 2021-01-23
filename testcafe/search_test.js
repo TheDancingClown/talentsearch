@@ -40,3 +40,22 @@ test('Message displayed when no matches found', async t => {
       // see results
       .expect(Selector('#talent-display').innerText).eql('No matches found');
 });
+
+test('Displays name when match found', async t => {
+  await t  
+    .click('#talent-selector')
+    .click(Selector('option', { text: 'North America' }))
+    .typeText('#location-input', 'Los Angeles')
+    .click('#search-button')
+    .expect(Selector('#talent-display').innerText).eql('Diane Nguyen');
+});
+
+test('Displays multiple names when matches found', async t => {
+  await t  
+    .click('#talent-selector')
+    .click(Selector('option', { text: 'North America' }))
+    .typeText('#location-input', 'Springfield')
+    .click('#search-button')
+    .expect(Selector('#talent-display').innerText).contains('Homer Simpson')
+    .expect(Selector('#talent-display').innerText).contains('Krusty the Clown');
+});
